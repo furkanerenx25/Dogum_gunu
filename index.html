@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi ki Doğdun Animasyonu</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .message {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff4081;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="button" onclick="showMessage()">Bana Tıkla!</button>
+
+    <div id="birthdayMessage" class="message hidden">🎉 İyi ki doğdun! 🎂</div>
+
+    <script>
+        function showMessage() {
+            let message = document.getElementById("birthdayMessage");
+            message.classList.remove("hidden");
+            setTimeout(() => {
+                message.classList.add("animate");
+            }, 100); 
+        }
+    </script>
+
+</body>
+</html>
